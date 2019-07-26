@@ -1,0 +1,59 @@
+{
+    "name": "ejetar/api-response-formatter",
+    "description": "A simple and fast \uD83D\uDE80 library that displays responses in various formats, according to the Accept header, entered by the user. The library currently displays responses in JSON, XML, CSV, and YAML.\n",
+    "homepage": "https://ejetar.com/projects/api-response-formatter",
+    "version": "1.0.0-alpha",
+    "readme": "README.md",
+    "type": "library",
+    "licence": "MIT",
+    "authors": [
+        {
+            "name": "Guilherme Almeida Girardi",
+            "email": "guilhermeagirardi@gmail.com",
+            "homepage": "https://guilhermegirardi.com",
+            "role": "Developer"
+        }
+    ],
+    "keywords": [
+        "php",
+        "api",
+        "accept header",
+        "format",
+        "formatter",
+        "output",
+        "data",
+        "convert",
+        "response",
+        "xml",
+        "json",
+        "csv",
+        "yaml",
+        "laravel"
+    ],
+    "require": {
+        "php": ">=5.4",
+        "ejetar/accept-header-interpreter": "^1.0.0-alpha",
+        "ejetar/laravel-formatter": "^3.1",
+        "illuminate/support": ">=5",
+        "illuminate/http": ">=5"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.2",
+        "symfony/var-dumper": "^4.3.0",
+        "orchestra/testbench": "^3.8"
+    },
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "Ejetar\\ApiResponseFormatter\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "classmap": [
+            "tests/TestCase.php"
+        ]
+    },
+    "scripts": {
+        "test": "vendor\\bin\\phpunit"
+    }
+}
