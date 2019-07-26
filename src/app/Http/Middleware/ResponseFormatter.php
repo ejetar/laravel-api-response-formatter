@@ -5,7 +5,7 @@ namespace Ejetar\ApiResponseFormatter\App\Http\Middleware;
 use Closure;
 use Ejetar\AcceptHeaderInterpreter\AcceptHeaderInterpreter;
 use Illuminate\Http\Response;
-use SoapBox\Formatter\Formatter;
+use Ejetar\Formatter\Formatter;
 
 class ResponseFormatter {
 
