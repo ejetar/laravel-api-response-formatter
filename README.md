@@ -90,6 +90,3 @@ Don't forget to star in this repository! 😀
 
 ## License
 This library is a open-source software licensed under the MIT license.
-
-## Credits
-Special thanks to [SoapBox](https://github.com/SoapBox) for developing the [laravel-formatter](https://github.com/SoapBox/laravel-formatter) library as it plays a key role in our project.
