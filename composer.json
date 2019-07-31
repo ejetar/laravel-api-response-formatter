@@ -2,7 +2,7 @@
     "name": "ejetar/api-response-formatter",
     "description": "A simple and fast \uD83D\uDE80 library that displays responses in various formats, according to the Accept header, entered by the user. The library currently displays responses in JSON, XML, CSV, and YAML.\n",
     "homepage": "https://ejetar.com/projects/api-response-formatter",
-    "version": "1.0.0-alpha",
+    "version": "1.0.1-alpha",
     "readme": "README.md",
     "type": "library",
     "licence": "MIT",
