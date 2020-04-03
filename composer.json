@@ -5,7 +5,7 @@
     "version": "1.0.1-alpha",
     "readme": "README.md",
     "type": "library",
-    "licence": "MIT",
+    "license": "MIT",
     "authors": [
         {
             "name": "Guilherme Almeida Girardi",
