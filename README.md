@@ -67,10 +67,10 @@ Accept: application/json
 ## Installation
 First, run: `composer require ejetar/api-response-formatter`
 
-After, add `Ejetar\ApiResponseFormatter\App\Providers\AppServiceProvider::class` in `providers` array in `config/app.php` file.
+After, add `Ejetar\ApiResponseFormatter\Providers\AppServiceProvider::class` in `providers` array in `config/app.php` file.
 
 ## Get started
-To start using this package is very simple, just call Middlware `response_formatter` in your `routes/api.php` file.
+To start using this package is very simple, just call Middlware `api-response-formatter` in your `routes/api.php` file.
 
 As in the following example:
 ```php
