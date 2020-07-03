@@ -74,7 +74,7 @@ To start using this package is very simple, just call Middlware `api-response-fo
 
 As in the following example:
 ```php
-Route::middleware(['cors', 'response_formatter'])->prefix('/v1')->name('api.')->group(function() {
+Route::middleware(['cors', 'api-response-formatter'])->prefix('/v1')->name('api.')->group(function() {
     Route::prefix('users')->name('users.')->group(function () {
         Route::get('me', 'UsersController@me')->name('me');
     });
