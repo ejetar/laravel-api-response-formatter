@@ -1,11 +1,10 @@
 {
-    "name": "ejetar/api-response-formatter",
+    "name": "ejetar/laravel-api-response-formatter",
     "description": "A simple and fast \uD83D\uDE80 library that displays responses in various formats, according to the Accept header, entered by the user. The library currently displays responses in JSON, XML, CSV, and YAML.\n",
     "homepage": "https://ejetar.com/projects/api-response-formatter",
-    "version": "1.1.0-alpha",
-    "readme": "README.md",
     "type": "library",
     "license": "MIT",
+    "version": "1.0.0",
     "authors": [
         {
             "name": "Guilherme Almeida Girardi",
@@ -31,21 +30,18 @@
         "laravel"
     ],
     "require": {
-        "php": ">=7.2.5",
-        "ejetar/accept-header-interpreter": "~1.1.0-alpha",
-        "ejetar/laravel-formatter": "~3.0",
-        "illuminate/support": "~5.4.0|~5.5.0|~5.6.0|~5.7.0|~5.8.0|~6.0|~7.0",
-        "illuminate/http": "~5.4.0|~5.5.0|~5.6.0|~5.7.0|~5.8.0|~6.0|~7.0"
+        "symfony/serializer": "^5.1",
+        "symfony/yaml": "^5.1",
+        "laravel/framework": "^7.17"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.0",
         "symfony/var-dumper": "~5.0",
         "orchestra/testbench": "~3.4|~3.5|~3.6|~3.7|~3.8|~4.0|~5.0"
     },
-    "minimum-stability": "stable",
     "autoload": {
         "psr-4": {
-            "Ejetar\\ApiResponseFormatter\\": "src/"
+            "Ejetar\\ApiResponseFormatter\\": "src/app/"
         }
     },
     "autoload-dev": {
@@ -55,5 +51,14 @@
     },
     "scripts": {
         "test": "vendor\\bin\\phpunit"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Ejetar\\ApiResponseFormatter\\Providers\\AppServiceProvider"
+            ]
+        }
     }
 }

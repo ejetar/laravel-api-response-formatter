@@ -7,23 +7,28 @@
     + [Output](#output)
   * [Example 2](#example-2)
     + [Output](#output-1)
+  * [Example 3](#example-3)
+    + [Output](#output-2)
+  * [Example 4](#example-4)
+    + [Output](#output-3)
 - [Installation](#installation)
 - [Get started](#get-started)
 - [Changelog](#changelog)
 - [Contributing](#contributing)
 - [License](#license)
-- [Credits](#credits)
 
 ## About
 A simple and fast 🚀 library that displays responses in various formats, according to the Accept header, entered by the user. The library currently displays responses in JSON, XML, CSV, and YAML.
 
 ## How it works
-The API Response Formatter package provides the developer with a middleware called response_formatter. This middleware takes Response and converts it to a certain format based on the user's request.
+The API Response Formatter package provides the developer with a middleware called api-response-formatter. This middleware takes Response and converts it to a certain format based on the user's request.
 
 In practical terms:
-1. Read the contents of the Accept header to know which response format to display to the user.
-2. Take the original response content provided by Laravel and convert it to the desired format;
-3. Display the response to the user;
+1. Reads the contents of the Accept header to know which response format to display to the user.
+2. Takes the original response content provided by Laravel and convert it to the desired format;
+3. Displays the response to the user;
+
+It also provides a custom ExceptionHandler, which allows exceptions to also be thrown in the formats you want. A very nice trick of this handler is that when the route is /api/*, it forces the response to be in JSON, CSV, YAML or XML (if no type is informed via Accept, then JSON is selected by default). This prevents the API, at some point of failure, returns an HTML error.
 
 ### Example 1
 ```
@@ -59,15 +64,40 @@ Accept: application/json
         "surname": "Girardi",
         "email": "guilhermeagirardi@gmail.com",
         "created_at": "2019-04-24 20:34:03",
-        "updated_at": "2019-04-24 20:34:03",
+        "updated_at": "2019-04-24 20:34:03"
     }
 ]
 ```
+### Example 3
+```
+GET /api/v1/users
+Accept: text/csv
+```
+#### Output
+```csv
+id,name,surname,email,created_at,updated_at
+30,Guilherme,Girardi,guilhermeagirardi@gmail.com,"2019-04-24 20:34:03","2019-04-24 20:34:03"
+```
+### Example 4
+```
+GET /api/v1/users
+Accept: application/x-yaml
+```
+#### Output
+```yaml
+id: 30
+name: Guilherme
+surname: Girardi
+email: guilhermeagirardi@gmail.com
+created_at: '2019-04-24 20:34:03'
+updated_at: '2019-04-24 20:34:03'
+```
 
 ## Installation
-First, run: `composer require ejetar/api-response-formatter`
-
-After, add `Ejetar\ApiResponseFormatter\Providers\AppServiceProvider::class` in `providers` array in `config/app.php` file.
+1. First, run: `composer require ejetar/api-response-formatter`;
+2. Add `Ejetar\ApiResponseFormatter\Providers\AppServiceProvider::class` in `providers` array in `config/app.php` file;
+3. In `app/Exceptions/Handler.php`, replace `Illuminate\Foundation\Exceptions\Handler` with `Ejetar\ApiResponseFormatter\Exceptions\Handler`;
+4. In `public/index.php`, replace `Illuminate\Http\Request::capture()` with `Ejetar\ApiResponseFormatter\Requests\Request::capture()`;
 
 ## Get started
 To start using this package is very simple, just call Middlware `api-response-formatter` in your `routes/api.php` file.
