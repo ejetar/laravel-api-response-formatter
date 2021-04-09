@@ -94,7 +94,7 @@ updated_at: '2019-04-24 20:34:03'
 ```
 
 ## Installation
-1. First, run: `composer require ejetar/api-response-formatter`;
+1. First, run: `composer require ejetar/laravel-api-response-formatter`;
 2. Add `Ejetar\ApiResponseFormatter\Providers\AppServiceProvider::class` in `providers` array in `config/app.php` file;
 3. In `app/Exceptions/Handler.php`, replace `Illuminate\Foundation\Exceptions\Handler` with `Ejetar\ApiResponseFormatter\Exceptions\Handler`;
 4. In `public/index.php`, replace `Illuminate\Http\Request::capture()` with `Ejetar\ApiResponseFormatter\Requests\Request::capture()`;
